@@ -30,7 +30,4 @@ spec:
             name: frontend-srv
             port:
               number: 80
-status:
-  loadBalancer:
-    ingress:
-    - ip: 34.87.27.18            
+     
