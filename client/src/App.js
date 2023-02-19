@@ -105,13 +105,12 @@ function App() {
 			</TableContainer>
       <Box
   sx={{
-    position: "absolute",
-    top: "360px",
-    left: "50%",
-    transform: "translateX(-50%)",
+    position: "fixed",
+    top: "16px",
+    right: "180px",
     fontSize: "1.4rem",
     fontWeight: "bold",
-    p: 2,
+    p: 1,
   }}
 >
   <a
@@ -121,7 +120,9 @@ function App() {
   >
     Natapat Pimsang's LinkedIn profile
   </a>
-</Box>
+</Box> 
+
+
 
 
 
