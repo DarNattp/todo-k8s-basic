@@ -15,11 +15,11 @@ spec:
       restartPolicy: Always
       containers:
       - name: frontend-depl
-        image: darnattp/basic-k8s-todo-client:v5
-        resources:
-          limits:
-            memory: "32Mi"
-            cpu: "10m"
+        image: darnattp/basic-k8s-todo-client:v6
+        # resources:
+        #   limits:
+        #     memory: "32Mi"
+        #     cpu: "10m"
         ports:
         - containerPort: 80
 
