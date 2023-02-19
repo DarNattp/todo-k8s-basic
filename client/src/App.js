@@ -60,7 +60,7 @@ function App() {
 
 	return (
 		<Container>
-			<Typography variant="h1">Todo List</Typography>
+			<Typography variant="h1">Todo Application</Typography>
 			<Box sx={{ m: 8 }} />
 			<div>
 				<TextField

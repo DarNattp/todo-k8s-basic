@@ -9,6 +9,7 @@ spec:
   - http:
       paths:
       - path: /api
+        host: todo2.natapat.me
         pathType: Prefix
         backend:
           service:
@@ -16,6 +17,7 @@ spec:
             port:
               number: 5050
       - path: /swagger
+        host: todo2.natapat.me
         pathType: Prefix
         backend:
           service:
@@ -23,6 +25,7 @@ spec:
             port:
               number: 5050
       - path: /
+        host: todo2.natapat.me
         pathType: Prefix
         backend:
           service:
