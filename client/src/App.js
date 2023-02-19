@@ -60,7 +60,7 @@ function App() {
 
 	return (
 		<Container>
-			<Typography variant="h1">Todo Application</Typography>
+			<Typography variant="h2">Todo Application</Typography>
 			<Box sx={{ m: 8 }} />
 			<div>
 				<TextField
@@ -103,6 +103,32 @@ function App() {
 					</TableBody>
 				</Table>
 			</TableContainer>
+      <Box
+  sx={{
+    position: "absolute",
+    top: "360px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    fontSize: "1.4rem",
+    fontWeight: "bold",
+    p: 2,
+  }}
+>
+  <a
+    href="https://www.linkedin.com/in/natapat-pimsang/"
+    target="_blank"
+    sx={{ textDecoration: "none" }}
+  >
+    Natapat Pimsang's LinkedIn profile
+  </a>
+</Box>
+
+
+
+
+
+
+
 		</Container>
 	)
 }
