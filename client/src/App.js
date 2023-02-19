@@ -106,11 +106,13 @@ function App() {
       <Box
   sx={{
     position: "fixed",
-    top: "16px",
-    right: "180px",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, 50%)",
     fontSize: "1.4rem",
     fontWeight: "bold",
     p: 1,
+    color: "blue",
   }}
 >
   <a
@@ -120,7 +122,8 @@ function App() {
   >
     Natapat Pimsang's LinkedIn profile
   </a>
-</Box> 
+</Box>
+
 
 
 
