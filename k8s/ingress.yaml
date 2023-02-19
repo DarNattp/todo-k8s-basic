@@ -5,6 +5,10 @@ metadata:
   # annotations:
   #   nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
+  providers:
+    kubernetesIngress:
+      ingressEndpoint:
+        ip: 34.87.27.18
   rules:
   - host: todo2.natapat.me
     http:
