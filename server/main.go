@@ -12,14 +12,14 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	fiberLogger "github.com/gofiber/fiber/v2/middleware/logger"
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/thetkpark/gdsc-kmutt-basic-k8s/config"
-	"github.com/thetkpark/gdsc-kmutt-basic-k8s/todo"
+	"github.com/DarNattp/todo-k8s-basic/config"
+	"github.com/DarNattp/todo-k8s-basic/todo"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 
-	_ "github.com/thetkpark/gdsc-kmutt-basic-k8s/docs"
+	_ "github.com/DarNattp/todo-k8s-basic/docs"
 )
 
 // @title Todo API

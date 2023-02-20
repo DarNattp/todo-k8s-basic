@@ -1,4 +1,4 @@
-module github.com/thetkpark/gdsc-kmutt-basic-k8s
+module github.com/DarNattp/todo-k8s-basic
 
 go 1.18
 
