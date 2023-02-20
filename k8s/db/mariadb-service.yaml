@@ -1,14 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: maria-db
-  labels:
-    app: maria-db
+  name: mariadb-srv
 spec:
-  clusterIP: None
+  type: ClusterIP
   selector:
     app: maria-db
   ports:
-  - name: mysql
-    port: 3306
+  - port: 3306
     targetPort: 3306

@@ -1,13 +1,11 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
-  name: maria-db
+  name: maria-db-depl
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: maria-db
-  serviceName: maria-db
   template:
     metadata:
       labels:
@@ -18,44 +16,25 @@ spec:
           persistentVolumeClaim:
             claimName: mariadb-pvc
       containers:
-        - name: maria-db
-          image: mariadb
-          command:
-            - /bin/bash
-            - -c
-            - |
-              if [ $(hostname -s) == "maria-db-0" ]; then
-                mysqld --wsrep-new-cluster --wsrep_node_address=$(hostname -i) &
-              else
-                mysqld --wsrep_cluster_address=gcomm://maria-db-0.maria-db.default.svc.cluster.local:4567 --wsrep_node_address=$(hostname -i) &
-              fi
-              wait
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "50m"
-          ports:
-            - containerPort: 3306
-          env:
-            - name: MARIADB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: todo-app-secret
-                  key: DB_PASSWORD
-            - name: MARIADB_DATABASE
-              valueFrom:
-                configMapKeyRef:
-                  name: todo-app-configmap
-                  key: DB_DATABASE
-          volumeMounts:
-            - name: maria-db-volume
-              mountPath: /var/lib/mysql
-  volumeClaimTemplates:
-    - metadata:
-        name: maria-db-volume
-      spec:
-        accessModes:
-          - ReadWriteOnce
+      - name: maria-db
+        image: mariadb
         resources:
-          requests:
-            storage: 1Gi
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MARIADB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: todo-app-secret
+                key: DB_PASSWORD
+          - name: MARIADB_DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: todo-app-configmap
+                key: DB_DATABASE
+        volumeMounts:
+          - name: maria-db-volume
+            mountPath: /var/lib/mysql
